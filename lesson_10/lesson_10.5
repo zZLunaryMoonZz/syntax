@@ -1,0 +1,19 @@
+input_data = input("Клики, Показы, Просмотры: ")
+data = [int(x) for x in input_data.split(', ')]
+
+def analyze_ad_efficiency(data):
+    if data[0] / data[1] < 0.01 and data[1] < data[2]:
+        efficiency = "Недооцененная"
+    elif 0.01 <= data[0] / data[1] < 0.05:
+        efficiency = "Низкая"
+    elif 0.05 <= data[0] / data[1] < 0.1 and data[0] < data[2]:
+        efficiency = "Средняя"
+    elif 0.1 <= data[0] / data[1]:
+        efficiency = "Высокая"
+    else:
+        efficiency = "Неопределенная"
+    return efficiency
+
+result = analyze_ad_efficiency(data)
+
+print(result)

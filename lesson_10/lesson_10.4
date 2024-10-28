@@ -1,0 +1,14 @@
+input_budget = float(input("Бюджет: "))
+
+def choose_ad_platform(input_budget):
+    if input_budget < 1000:
+        selection = "Google"
+    elif 1000 <= input_budget < 5000:
+        selection = "Facebook"
+    elif 5000 <= input_budget:
+        selection = "Instagram"
+    return selection    
+                     
+result = choose_ad_platform(input_budget)
+
+print(result)

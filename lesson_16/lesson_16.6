@@ -1,0 +1,23 @@
+n = 5
+matrix = [[0 for i in range(n)] for j in range(n)]
+for i in range(n):
+    for j in range(n):
+        if i == n - j - 1 and i != j:     # right diagonal
+            matrix[i][j] = 5
+
+        elif i < n // 2 and i < j < n - i - 1:          # top segment
+            matrix[i][j] = 1
+
+        elif i > n // 2 and n - i - 1 < j < i:          # bottem segment
+            matrix[i][j] = 3
+
+        elif i < n - 1 // 2 and n + i + 1 > i > j:      # left segment
+            matrix[i][j] = 2
+
+        elif i < n + 1 // 2 and i < j < n + i + 1:      # right segment
+            matrix[i][j] = 4
+
+for i in range(n):
+    for j in range(n):
+        print(matrix[i][j], end=' ')
+    print()

@@ -1,0 +1,13 @@
+def count_specific_items_with_while(products: list, product):
+    a = 0
+    i = 0
+    while i < len(products):
+        if products[i] == product:
+            a += 1
+
+        i += 1
+    print(f"Колличество '{product}': {a}")
+
+
+count_specific_items_with_while(['fruit', 'toy', 'fruit', 'toy'], 'toy')
+count_specific_items_with_while(['clotes', 'clotes', 'clotes'], 'clotes')

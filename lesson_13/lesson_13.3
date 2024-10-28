@@ -1,0 +1,22 @@
+my_cash = {
+    'args': None,
+    'result': None
+}
+
+
+def cashed(func):
+    def cash(*args):
+        if my_cash['args'] == args:
+            return f'Загрузили из кэша: {my_cash["result"]}'
+        else:
+            result = func(*args)
+            my_cash['args'] = args
+            my_cash['result'] = result
+            return f'Посчитали цену: {result}'
+
+    return cash
+
+
+@cashed
+def calculate_project_cost(*args):
+    return 3000

@@ -1,0 +1,13 @@
+input_rgb = input("Введите RGB: ")
+rgb = [int(x) for x in input_rgb.split(', ')]
+
+def convert_to_hex(rgb):
+    
+    if len(rgb) !=3:
+        print("Ошибка")
+        return None
+    hex_color = f"{rgb[0]:02X}{rgb[1]:02X}{rgb[2]:02X}"
+    return hex_color
+hex_format = convert_to_hex(rgb)
+
+print(f"HEX: {hex_format}")

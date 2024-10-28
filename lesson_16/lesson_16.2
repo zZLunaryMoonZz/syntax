@@ -1,0 +1,15 @@
+input_length = input("Введите длины полок: ")
+length_shelves = [int(x) for x in input_length.split(",")]
+
+input_items = input("Введите количесво товара: ")
+item_quantity = [int(x) for x in input_items.split(",")]
+
+def create_shelves(length_shelves, item_quantity):
+
+    shelves = [[length, quantity] for length, quantity in zip(length_shelves, item_quantity)]
+    return shelves
+
+finished_shelves = create_shelves(length_shelves, item_quantity)
+
+
+print(f"Полки: {finished_shelves}")

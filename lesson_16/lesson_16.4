@@ -1,0 +1,16 @@
+def create_shelves(data):
+
+    items = data.split(';')
+    item_sales = [list(map(int, item.split(","))) for item in items]
+
+    return item_sales
+
+items = "5,3;7,2"
+items_1 = "2,6,4;3,5,7;1,2,3"
+
+finished_shelves = create_shelves(items)
+finished_shelves_1 = create_shelves(items_1)
+
+
+print(f"Продажи: {finished_shelves}")
+print(f"Продажи: {finished_shelves_1}")

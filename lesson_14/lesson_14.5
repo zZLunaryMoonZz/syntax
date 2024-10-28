@@ -1,0 +1,20 @@
+from collections import Counter
+
+
+def inventory_list(catalogs):
+    type_inventor = Counter(map(lambda catalog: catalog[1], catalogs))
+    return dict(type_inventor)
+
+
+catalogs_1 = [("Рубашка", "Одежда"), ("Кружка", "Посуда")]
+catalogs_2 = [("Рубашка", "Одежда"), ("Штаны", "Одежда"), ("Кружка", "Посуда")]
+catalogs_3 = [("Ручка", "Канцелярия"), ("Тетрадь", "Канцелярия"), ("Кружка", "Посуда"), ("Стул", "Мебель")]
+
+result_1 = inventory_list(catalogs_1)
+result_2 = inventory_list(catalogs_2)
+result_3 = inventory_list(catalogs_3)
+
+
+print(result_1)
+print(result_2)
+print(result_3)

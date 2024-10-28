@@ -1,0 +1,25 @@
+import time
+
+
+def timer(func):
+    def wrapper(*args, **kwargs):
+        start = time.time()
+        func(*args, **kwargs)
+        end = time.time()
+        print(f'Execution {round(end-start, 2)} seconds')
+
+    return wrapper
+
+
+@timer
+def create_design(iters, pause):
+    time.sleep(pause)
+    print(iters)
+
+
+iters_1 = 'Логотип Васильевский рынок'
+iters_2 = 'Макет сайта "Логомашины"'
+
+
+create_design(iters_1, 2.45)
+create_design(iters_2, 4.30)

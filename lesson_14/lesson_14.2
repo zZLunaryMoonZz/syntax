@@ -1,0 +1,11 @@
+price_list = [99, 150, 200, 349, 501]
+
+
+def revaluation(price):
+    revaluation_list = list(map(lambda x: round(x, -2), price))
+    revaluations_list = list(set(revaluation_list))
+
+    return revaluations_list
+
+
+print(revaluation(price_list))

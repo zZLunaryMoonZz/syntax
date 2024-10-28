@@ -1,0 +1,20 @@
+employee_dict = {
+    "Анна" : 5,
+    "Боб" : 7,
+    "Сюзан" : 9
+}
+
+
+def responsible_employee(employee_dict):
+    names_employee = list(employee_dict.keys())
+    values_employee = list(employee_dict.values())
+
+    max_copleted = max(values_employee)
+    responsible_employees = [name for name, completed in employee_dict.items() if completed == max_copleted]
+
+    return responsible_employees
+
+responsible_employees = responsible_employee(employee_dict)
+result = ', '.join(map(str, responsible_employees))
+
+print("Самый ответственный сотрудник: ", result)
